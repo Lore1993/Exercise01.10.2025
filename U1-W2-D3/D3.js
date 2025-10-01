@@ -142,8 +142,8 @@ red: [],
 */
 for (let i=0; i<starWarsCharacters.length;i++) {
     let character = starWarsCharacters[i]; 
-  let color = starWarsCharacters[i].eye_color; 
-  switch (color) {
+  
+  switch (starWarsCharacters[i].eye_color) {
     case "blue": 
     eyeColor.blue.push(character)
     break;
@@ -202,7 +202,13 @@ for (let i =0; i<starWarsCharacters.length; i++) {if (starWarsCharacters[i].gend
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
-
+for(let i=0;i<femaleCharacters.length;i++) {
+  for(let j=0;j<charactersNames.length;j++){if(femaleCharacters[i].name === charactersNames[j]){charactersNames.splice(j,1)}}
+}
+console.log(charactersNames)
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+let randomIndex = Math.floor(Math.random()*10)
+let randomCharacters = starWarsCharacters [randomIndex].name
+console.log("Ciao oggi mangi con",randomCharacters)
